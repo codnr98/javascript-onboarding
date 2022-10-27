@@ -17,6 +17,16 @@ function problem1(pobi, crong) {
       ? { num: a, score: 1 }
       : { num: b, score: 2 };
   }
+  //개인 maxScore
+  function eachMaxScore(book) {
+    let plus = book.map((item) => calculator(item, true));
+    let multi = book.map((item) => calculator(item, false));
+    let maxLeft = diff(...plus).num;
+    let maxRight = diff(...multi).num;
+    // console.log(plus, multi);
+    // console.log(diff(maxLeft, maxRight));
+    return diff(maxLeft, maxRight);
+  }
 
   return answer;
 }
