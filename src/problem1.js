@@ -28,7 +28,8 @@ function problem1(pobi, crong) {
     return diff(maxLeft, maxRight);
   }
 
-  return answer;
+  return diff(eachMaxScore(pobi).num, eachMaxScore(crong).num).score;
 }
+console.log(problem1([99, 102], [211, 212]));
 
 module.exports = problem1;
