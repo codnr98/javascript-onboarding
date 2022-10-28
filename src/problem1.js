@@ -1,6 +1,16 @@
 function problem1(pobi, crong) {
-  //입력 조건
   //입력이 왼쪽보다 오른쪽이 더 큰 경우
+  function err(page) {
+    if (page[1] - page[0] !== 1) {
+      return -1;
+    }
+    return 0;
+  }
+
+  //예외사항 처리
+  let z = [pobi, crong];
+  z = z.map((x) => err(x));
+
   //점수 계산기
   function calculator(page, operator) {
     return page
@@ -34,10 +44,10 @@ function problem1(pobi, crong) {
 
   //결과
   // console.log(diff(eachMaxScore(pobi).num, eachMaxScore(crong).num));
-
-  return diff(eachMaxScore(pobi).num, eachMaxScore(crong).num).score;
+  return z.includes(-1)
+    ? -1
+    : diff(eachMaxScore(pobi).num, eachMaxScore(crong).num).score;
 }
-console.log(problem1([99, 102], [211, 212]));
-
+problem1([131, 132], [211, 212]);
 module.exports = problem1;
 // 배열을 넣으면
