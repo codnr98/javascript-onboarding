@@ -48,6 +48,6 @@ function problem1(pobi, crong) {
     ? -1
     : diff(eachMaxScore(pobi).num, eachMaxScore(crong).num).score;
 }
-problem1([131, 132], [211, 212]);
+
 module.exports = problem1;
 // 배열을 넣으면
