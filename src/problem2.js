@@ -10,7 +10,17 @@ function problem2(cryptogram) {
     });
     return result;
   }
-  return answer;
+  while (true) {
+    if (checkDuplicate() === true) {
+      break;
+    }
+    answer.forEach((item, index, array) => {
+      if (item === array[index + 1]) {
+        answer.splice(index, 2);
+      }
+    });
+  }
+  return answer.join("");
 }
 
 module.exports = problem2;
