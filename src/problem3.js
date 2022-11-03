@@ -1,5 +1,7 @@
 function problem3(number) {
-  var answer;
+  var answer = 0;
+  let numArray = Array.from(Array(number + 1).keys()).map((x) => x.toString());
+
   return answer;
 }
 
